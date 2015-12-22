@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Face Detect</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Face Detect</string>
+    <string name="hello_world">Hello, Face Detection!</string>
+    <string name="start">ignition</string>
+</resources>
