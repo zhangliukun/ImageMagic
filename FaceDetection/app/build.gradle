@@ -1,18 +1,17 @@
-import org.apache.tools.ant.taskdefs.condition.Os
 import com.android.build.gradle.tasks.NdkCompile
 
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.derzapp.myfacedetection"
-        minSdkVersion 10
+        applicationId "com.wade.myfacedetection"
+        minSdkVersion 16
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 110
+        versionName "1.1.0"
         ndk {moduleName "NativeCode"}
     }
 
@@ -60,6 +59,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
     compile project(':libraries:opencv')
+    compile 'org.bytedeco.javacpp-presets:opencv:3.0.0-1.1'
 }

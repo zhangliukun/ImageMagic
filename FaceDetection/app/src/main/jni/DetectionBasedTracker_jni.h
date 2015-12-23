@@ -2,10 +2,8 @@
 #include <jni.h>
 /* Header for class org_opencv_samples_fd_DetectionBasedTracker */
 
-//#ifndef _Included_org_opencv_samples_fd_DetectionBasedTracker
-//#define _Included_org_opencv_samples_fd_DetectionBasedTracker
-#ifndef _Included_com_wade_myfacedetection_DetectionBasedTracker
-#define _Included_com_wade_myfacedetection_DetectionBasedTracker
+#ifndef _Included_org_opencv_samples_fd_DetectionBasedTracker
+#define _Included_org_opencv_samples_fd_DetectionBasedTracker
 #ifdef __cplusplus
 extern "C" {
 #endif
