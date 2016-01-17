@@ -16,10 +16,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".opencv.grayprocess.GrayProcessActivity">
+        <activity android:name=".opencv.grayprocess.GrayProcessActivity"/>
 
-        </activity>
+        <activity android:name=".opencv.cameraprew.CameraPrewActivity"
+            android:screenOrientation="sensorLandscape"/>
+
     </application>
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 
 
