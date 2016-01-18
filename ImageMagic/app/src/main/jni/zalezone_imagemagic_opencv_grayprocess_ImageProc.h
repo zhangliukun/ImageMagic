@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT jintArray JNICALL Java_zalezone_imagemagic_opencv_grayprocess_ImageProc_grayProc
   (JNIEnv *, jclass, jintArray, jint, jint);
 
+/*
+ * Class:     zalezone_imagemagic_opencv_grayprocess_ImageProc
+ * Method:    FindFeatures
+ * Signature: (JJ)V
+ */
+JNIEXPORT void JNICALL Java_zalezone_imagemagic_opencv_grayprocess_ImageProc_FindFeatures
+  (JNIEnv *, jclass, jlong, jlong);
+
 #ifdef __cplusplus
 }
 #endif

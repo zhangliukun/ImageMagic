@@ -7,8 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import zalezone.imagemagic.R;
-import zalezone.imagemagic.opencv.cameraprew.CameraPrewActivity;
+import zalezone.imagemagic.opencv.officialsample.CameraPrewActivity;
 import zalezone.imagemagic.opencv.grayprocess.GrayProcessActivity;
+import zalezone.imagemagic.opencv.officialsample.MixedProcessing;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter = new MainListAdapter(this, R.layout.adapter_listview_main);
         adapter.add("灰度处理");
         adapter.add("照相机预览");
+        adapter.add("mixedprocessing");
         functionListView.setAdapter(adapter);
         functionListView.setOnItemClickListener(this);
     }
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 1:
                 CameraPrewActivity.startActivity(this);
                 break;
+            case 2:
+                MixedProcessing.startActivity(this);
             default:
                 return;
         }

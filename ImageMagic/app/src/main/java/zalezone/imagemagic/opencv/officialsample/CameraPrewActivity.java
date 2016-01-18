@@ -1,4 +1,4 @@
-package zalezone.imagemagic.opencv.cameraprew;
+package zalezone.imagemagic.opencv.officialsample;
 
 import android.app.Activity;
 import android.content.Context;
