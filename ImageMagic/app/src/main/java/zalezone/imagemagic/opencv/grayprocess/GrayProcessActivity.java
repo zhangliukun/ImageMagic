@@ -10,9 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import zalezone.imagemagic.R;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class GrayProcessActivity extends ActionBarActivity implements View.OnClickListener{
+import zalezone.imagemagic.R;
+import zalezone.imagemagic.base.BaseActivity;
+import zalezone.imagemagic.util.FileUtils;
+
+public class GrayProcessActivity extends BaseActivity implements View.OnClickListener{
 
 
     public static void  startActivity(Context context){
@@ -47,6 +53,11 @@ public class GrayProcessActivity extends ActionBarActivity implements View.OnCli
     private void initData() {
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.toux);
         imageView.setImageBitmap(bmp);
+//        if (FileUtils.writeImageToCache(this,bmp,"zaleFace","zale", Bitmap.CompressFormat.JPEG,100)){
+//            showToast("图像保存成功");
+//        }else {
+//            showToast("文件保存失败");
+//        }
     }
 
     private void processImage(){
@@ -58,7 +69,6 @@ public class GrayProcessActivity extends ActionBarActivity implements View.OnCli
         Bitmap resultImg = Bitmap.createBitmap(w,h, Bitmap.Config.ARGB_8888);
         resultImg.setPixels(pixels,0,w,0,0,w,h);
         imageView.setImageBitmap(resultImg);
-
     }
 
 

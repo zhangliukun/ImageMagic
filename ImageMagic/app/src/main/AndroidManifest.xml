@@ -40,6 +40,8 @@
     <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="false"/>
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
 
 

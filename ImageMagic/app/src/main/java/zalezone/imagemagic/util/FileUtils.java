@@ -1,6 +1,7 @@
 package zalezone.imagemagic.util;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
@@ -13,6 +14,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.DecimalFormat;
+
+import static android.graphics.Bitmap.*;
+import static android.graphics.Bitmap.CompressFormat.JPEG;
 
 /**
  * Created by zale on 16/3/9.
@@ -50,6 +54,19 @@ public class FileUtils {
         String path = getCachePath(context);
         if (!TextUtils.isEmpty(path)){
             String root = path + File.separator + DIR_IMAGE;
+            File file = new File(root);
+            if (!file.exists()){
+                file.mkdir();
+            }
+            return file.getAbsolutePath();
+        }
+        return "";
+    }
+
+    public static String getImageCachePathByGroup(Context context,String groupName){
+        String path = getCachePath(context);
+        if (!TextUtils.isEmpty(path)){
+            String root = path + File.separator + DIR_IMAGE +File.separator+ groupName;
             File file = new File(root);
             if (!file.exists()){
                 file.mkdir();
@@ -265,6 +282,52 @@ public class FileUtils {
                 }
             }
         }
+    }
+
+    /**
+     * 写入图片，如果写成功返回true
+     * @param context
+     * @param bitmap
+     * @param fileName
+     * @param format
+     * @param quality
+     * @return
+     */
+    public static boolean writeImageToCache(Context context,Bitmap bitmap,String groupName,String fileName,CompressFormat format,int quality){
+        switch (format){
+            case JPEG:
+                fileName += ".jpg";
+                break;
+            case PNG:
+                fileName += ".png";
+                break;
+            case WEBP:
+                fileName += ".webp";
+                break;
+        }
+        File file = new File(getImageCachePathByGroup(context,groupName)+File.separator+fileName);
+        FileOutputStream fout = null;
+        try {
+            if (file.exists()){
+                return false;
+            }
+            file.createNewFile();
+            fout = new FileOutputStream(file);
+            bitmap.compress(format,quality,fout);
+            fout.flush();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (fout!=null){
+                try {
+                    fout.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return false;
     }
 
     /**
