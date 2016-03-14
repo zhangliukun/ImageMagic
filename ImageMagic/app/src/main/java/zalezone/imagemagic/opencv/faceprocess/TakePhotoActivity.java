@@ -30,6 +30,11 @@ public class TakePhotoActivity extends BaseActivity implements CameraBridgeViewB
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_camera_prew);
         initView();
+        initData();
+    }
+
+    private void initData() {
+
     }
 
     private void initView() {
@@ -60,7 +65,7 @@ public class TakePhotoActivity extends BaseActivity implements CameraBridgeViewB
     @Override
     protected void onResume() {
         super.onResume();
-        if (cameraBridgeViewBase!=null && cameraBridgeViewBase.isEnabled()){
+        if (cameraBridgeViewBase!=null && !cameraBridgeViewBase.isEnabled()){
             cameraBridgeViewBase.enableView();
         }
     }

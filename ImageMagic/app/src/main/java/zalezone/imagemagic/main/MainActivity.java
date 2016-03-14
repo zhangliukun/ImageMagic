@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import zalezone.imagemagic.R;
+import zalezone.imagemagic.opencv.facedetect.FaceDetectActivity;
 import zalezone.imagemagic.opencv.officialsample.CameraPrewActivity;
 import zalezone.imagemagic.opencv.grayprocess.GrayProcessActivity;
 import zalezone.imagemagic.opencv.officialsample.MixedProcessing;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter.add("灰度处理");
         adapter.add("照相机预览");
         adapter.add("mixedprocessing");
+        adapter.add("facedetect");
         functionListView.setAdapter(adapter);
         functionListView.setOnItemClickListener(this);
     }
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 2:
                 MixedProcessing.startActivity(this);
+                break;
+            case 3:
+                FaceDetectActivity.startActivity(this);
             default:
                 return;
         }

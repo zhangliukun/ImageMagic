@@ -63,6 +63,12 @@ public class FileUtils {
         return "";
     }
 
+    /**
+     * 获得以组名分类的文件路径
+     * @param context
+     * @param groupName
+     * @return
+     */
     public static String getImageCachePathByGroup(Context context,String groupName){
         String path = getCachePath(context);
         if (!TextUtils.isEmpty(path)){
@@ -75,6 +81,14 @@ public class FileUtils {
         }
         return "";
     }
+
+//    public static String getAppRootPath(Context context){
+//        String state = Environment.getExternalStorageState();
+//        String path ="";
+//        if (state!=null&&state.equals(Environment.MEDIA_MOUNTED)){
+//            path = context.get
+//        }
+//    }
 
 
     /**
