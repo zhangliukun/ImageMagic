@@ -46,4 +46,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':opencv3-java')
     compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.google.android.gms:play-services:8.4.0'
 }
